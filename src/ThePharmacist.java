@@ -5,7 +5,7 @@ import java.util.Scanner;
  * @author Brooklyn Tech CS Department
  * @version September 2018
  */
-public class ChatBotRunner
+public class ThePharmacist
 {
 
 	/**
@@ -13,9 +13,9 @@ public class ChatBotRunner
 	 */
 	public static void main(String[] args)
 	{
-		ChatBot1 chatbot1 = new ChatBot1();
-		ChatBot2 chatbot2 = new ChatBot2();
-		ChatBot3 chatbot3 = new ChatBot3();
+		Ibuprofen chatbot1 = new Ibuprofen();
+		Oxycodone chatbot2 = new Oxycodone();
+		Aderall chatbot3 = new Aderall();
 		
 
 		Scanner in = new Scanner (System.in);
