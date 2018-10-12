@@ -41,7 +41,7 @@ public class Oxycodone
 	 */	
 	public String getGreeting()
 	{
-		return "Hi, what is up?";
+		return "Hey maaaaaaaan, how's it going?";
 	}
 	
 	/**
@@ -62,13 +62,13 @@ public class Oxycodone
 
 		else if (findKeyword(statement, "no") >= 0)
 		{
-			response = "Why so negative?";
+			response = "Why you have to be mad?";
                 	emotion--;
 		}
 		
 		else if (findKeyword(statement, "levin") >= 0)
 		{
-			response = "More like LevinTheDream amiright?";
+			response = "More like LevinTheDream amiright? .. right?";
 			emotion++;
 		}
 

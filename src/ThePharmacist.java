@@ -27,13 +27,21 @@ public class ThePharmacist
 		{
 			//Use Logic to control which chatbot is handling the conversation\
 			//This example has only chatbot1
-
-
-
-			chatbot1.chatLoop(statement);
-
-
+			System.out.println("What legal drug would you like to learn about? \n Your options are A : Ibuprofen B : Oxycodone and C : Aderall");
 			statement = in.nextLine();
+			if(statement.equals("A")){
+				chatbot1.chatLoop(statement);
+			}else if(statement.equals("B")){
+				chatbot2.chatLoop(statement);
+			}else if(statement.equals("C")){
+				chatbot3.chatLoop(statement);
+			}
+
+			System.out.println("fail");
+			//chatbot1.chatLoop(statement);
+
+
+			//statement = in.nextLine();
 
 
 		}
