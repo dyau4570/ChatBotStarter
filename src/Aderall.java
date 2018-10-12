@@ -39,15 +39,15 @@ public class Aderall
 	/**
 	 * Get a default greeting 	
 	 * @return a greeting
-	 */	
+	 */
 	public String getGreeting()
 	{
-		return "Hi, what is up?";
+		return "What do you want learn about Adderall?\\n Price or Side Effect?";
 	}
-	
+
 	/**
 	 * Gives a response to a user statement
-	 * 
+	 *
 	 * @param statement
 	 *            the user statement
 	 * @return a response based on the rules given
@@ -55,43 +55,36 @@ public class Aderall
 	public String getResponse(String statement)
 	{
 		String response = "";
-		
+
 		if (statement.length() == 0)
 		{
-			response = "Say something, please.";
+			response = "Say that again, I didn't hear what you said. \n Price or Side Effects?";
 		}
 
-		else if (findKeyword(statement, "no") >= 0)
+		else if (findKeyword(statement, "price") >= 0)
 		{
-			response = "Why so negative?";
-                	emotion--;
-		}
-		
-		else if (findKeyword(statement, "levin") >= 0)
-		{
-			response = "More like LevinTheDream amiright?";
-			emotion++;
+			response = "The price for Adderall oral tablet 5 mg is around $680 for a supply of 100 tablets, depending on the pharmacy you visit. Prices are for cash paying customers only and are not valid with insurance plans. A generic version of Adderall is available. ";
+
 		}
 
-		// Response transforming I want to statement
-		else if (findKeyword(statement, "I want to", 0) >= 0)
+		else if (findKeyword(statement, "effect") >= 0)
 		{
-			response = transformIWantToStatement(statement);
+			response = "Effects of Adderall on the Body. For people diagnosed with attention-deficit hyperactivity disorder (ADHD), Adderall helps to improve concentration and focus. ... The medication alters certain naturally-occurring chemicals in your brain by enhancing the effects of neurotransmitters such as dopamine and norepinephrine.";
+
 		}
-		else if (findKeyword(statement, "I want",0) >= 0)
+		else if (findKeyword(statement, "3") >= 0)
 		{
-			response = transformIWantStatement(statement);
-		}	
-		else
-		{
-			response = getRandomResponse();
+			response = "You have chosen adderall.\n  Do you want to learn about its Price or Side Effects?";
+
 		}
-		
+
+
+
 		return response;
 	}
-	
+
 	/**
-	 * Take a statement with "I want to <something>." and transform it into 
+	 * Take a statement with "I want to <something>." and transform it into
 	 * "Why do you want to <something>?"
 	 * @param statement the user statement, assumed to contain "I want to"
 	 * @return the transformed statement
@@ -261,15 +254,15 @@ public class Aderall
 		return randomHappyResponses [r.nextInt(randomHappyResponses.length)];
 	}
 	
-	private String [] randomNeutralResponses = {"Interesting, tell me more",
+	private String [] randomNeutralResponses = {"Okay",
 			"Hmmm.",
-			"Do you really think so?",
+			"Hmph Yes?",
 			"You don't say.",
-			"It's all boolean to me.",
-			"So, would you like to go for a walk?",
+			"Oh yes.",
+			"Great",
 			"Could you say that again?"
 	};
-	private String [] randomAngryResponses = {"Bahumbug.", "Harumph", "The rage consumes me!"};
-	private String [] randomHappyResponses = {"H A P P Y, what's that spell?", "Today is a good day", "You make me feel like a brand new pair of shoes."};
+	private String [] randomAngryResponses = {"NO.", "Harumph", "The rage consumes me!"};
+	private String [] randomHappyResponses = {"Wavy", "Today is a good day", "Very Nice."};
 	
 }
