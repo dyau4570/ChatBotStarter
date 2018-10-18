@@ -80,7 +80,47 @@ public class Oxycodone
 		else if (findKeyword(statement, "I want",0) >= 0)
 		{
 			response = transformIWantStatement(statement);
-		}	
+		}
+		else if(findKeyword(statement, "what is oxy",0) >= 0){
+			response = "Oxy is a pain medicine that is given by prescription only. \n Is there anything else about Oxy that you want to know?";
+			emotion++;
+		}
+		else if(findKeyword(statement, "Explain", 0) >= 0){
+			response = "What needs explaining";
+			emotion--;
+		}
+		else if(findKeyword(statement, "why", 0) >= 0){
+			response = "Oxy helps people that are in extreme pain.\n Is there anything else about Oxy that you would like to know?";
+			emotion++;
+		}
+		else if(findKeyword(statement, "good", 0) >= 0){
+			response = "I'm glad to hear that. What would you like to know about Oxycodone?";
+			emotion++;
+		}
+		else if(findKeyword(statement, "great", 0) >= 0){
+			response = "I'm glad to hear that. What would you like to know about Oxycodone?";
+			emotion++;
+		}
+		else if(findKeyword(statement, "fantastic", 0) >= 0){
+			response = "I'm glad to hear that. What would you like to know about Oxycodone?";
+			emotion++;
+		}
+		else if(findKeyword(statement, "terrible", 0) >= 0){
+			response = "That's unfortunate. What would you like to know what Oxycodone?";
+			emotion++;
+		}
+		else if(findKeyword(statement, "bad", 0) >= 0){
+			response = "That's unfortunate. What would you like to know about Oxycodone?";
+			emotion++;
+		}
+		else if(findKeyword(statement, "yes", 0) >= 0){
+			response = "Are you sure that's what you want?";
+			emotion--;
+		}
+		else if(findKeyword(statement, "nerd", 0) >= 0){
+			response = "I'm not sure what you mean..";
+			emotion--;
+		}
 		else
 		{
 			response = getRandomResponse();
