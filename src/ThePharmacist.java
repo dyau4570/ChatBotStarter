@@ -19,7 +19,7 @@ public class ThePharmacist
 		
 
 		Scanner in = new Scanner (System.in);
-		System.out.println("Welcome to the chatbot, nice to meet you.");
+		System.out.println("Welcome to the legal drugbot. How can I help you.");
 		String statement = in.nextLine();
 
 
@@ -36,8 +36,6 @@ public class ThePharmacist
 			}else if(statement.equals("C") || statement.equals("c")){
 				chatbot3.chatLoop(statement);
 			}
-
-			System.out.println("fail");
 			//chatbot1.chatLoop(statement);
 
 
