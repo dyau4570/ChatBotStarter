@@ -19,7 +19,7 @@ public class ThePharmacist
 		
 
 		Scanner in = new Scanner (System.in);
-		System.out.println("Welcome to the legal drugbot. How can I help you.");
+		System.out.println("Welcome to the legal drugbot. How can I help you?");
 		String statement = in.nextLine();
 
 
