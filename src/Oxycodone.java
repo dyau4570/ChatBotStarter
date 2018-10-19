@@ -4,8 +4,13 @@ import java.util.Scanner;
 /**
  * A program to carry on conversations with a human user.
  * This version:
- * @author Brooklyn Tech CS Department
- * @version September 2018
+ * @author Jacob Cedar
+ * @version October 2018
+ */
+
+/**
+ * I understand that the project wants me to make methods that do specific things.
+ * I can't think of any methods that would make this chatbot talk in a more fluid manor
  */
 public class Oxycodone
 {
@@ -119,6 +124,10 @@ public class Oxycodone
 		}
 		else if(findKeyword(statement, "nerd", 0) >= 0){
 			response = "I'm not sure what you mean..";
+			emotion--;
+		}
+		else if(findKeyword(statement, "mix",0) >= 0){
+			response = "Mixing Oxy and alcohol can kill you, don't do it";
 			emotion--;
 		}
 		else
@@ -293,10 +302,12 @@ public class Oxycodone
 		{	
 			return randomNeutralResponses [r.nextInt(randomNeutralResponses.length)];
 		}
-		if (emotion < 0)
+		if (emotion < 0 && emotion > -4)
 		{	
+			return randomSadResponses [r.nextInt(randomSadResponses.length)];
+		}else if(emotion < -4){
 			return randomAngryResponses [r.nextInt(randomAngryResponses.length)];
-		}	
+		}
 		return randomHappyResponses [r.nextInt(randomHappyResponses.length)];
 	}
 	
@@ -310,6 +321,6 @@ public class Oxycodone
 	};
 	private String [] randomAngryResponses = {"", "Harumph", "The rage consumes me!"};
 	private String [] randomHappyResponses = {", what's that spell?", "Today is a good day", "You make me feel like a brand new pair of shoes."};
-	private String [] randomSadResponses = {""};
+	private String [] randomSadResponses = {"who hurt you","That's quite sad","Did somebody hurt you?"};
 	
 }
