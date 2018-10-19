@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 /**
  * I understand that the project wants me to make methods that do specific things.
- * I can't think of any methods that would make this chatbot talk in a more fluid manor
+ * I can't think of any methods that would make this chatbot talk in a more fluid manner
  */
 public class Oxycodone
 {
@@ -62,7 +62,7 @@ public class Oxycodone
 		
 		if (statement.length() == 0)
 		{
-			response = "Say something, please.";
+			response = "What was that?";
 		}
 
 		else if (findKeyword(statement, "no") >= 0)
@@ -89,6 +89,9 @@ public class Oxycodone
 		else if(findKeyword(statement, "what is oxy",0) >= 0){
 			response = "Oxy is a pain medicine that is given by prescription only. \n Is there anything else about Oxy that you want to know?";
 			emotion++;
+		}else if(findKeyword(statement, "price", 0) >= 0){
+			response = "Oxy goes for around $2.00 a pill, is there anything more you'd like to know?";
+			emotion--;
 		}
 		else if(findKeyword(statement, "Explain", 0) >= 0){
 			response = "What needs explaining";
@@ -128,6 +131,10 @@ public class Oxycodone
 		}
 		else if(findKeyword(statement, "mix",0) >= 0){
 			response = "Mixing Oxy and alcohol can kill you, don't do it";
+			emotion--;
+		}
+		else if(findKeyword(statement, "suicide",0) >= 0){
+			response = "You need to call 1-800-273-8255";
 			emotion--;
 		}
 		else
@@ -311,16 +318,16 @@ public class Oxycodone
 		return randomHappyResponses [r.nextInt(randomHappyResponses.length)];
 	}
 	
-	private String [] randomNeutralResponses = {"Interesting, tell me more",
+	private String [] randomNeutralResponses = {"Tell me more",
 			"Hmmm.",
 			"Do you really think so?",
-			"You don't say.",
-			"It's all boolean to me.",
-			"So, would you like to go for a walk?",
-			"Could you say that again?"
+			"Gotcha",
+			"What's the difference",
+			"Seems legit",
+			"I'm confused"
 	};
-	private String [] randomAngryResponses = {"", "Harumph", "The rage consumes me!"};
-	private String [] randomHappyResponses = {", what's that spell?", "Today is a good day", "You make me feel like a brand new pair of shoes."};
-	private String [] randomSadResponses = {"who hurt you","That's quite sad","Did somebody hurt you?"};
+	private String [] randomAngryResponses = {"You offend me with your words", "My fury will be released", "I will smite you with the strength of a thousand suns"};
+	private String [] randomHappyResponses = {"yay!", "Today is a good day", "You're making this almost fun"};
+	private String [] randomSadResponses = {"who hurt you","That's quite sad","Fail too many classes?"};
 	
 }

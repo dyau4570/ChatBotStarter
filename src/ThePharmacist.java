@@ -29,11 +29,11 @@ public class ThePharmacist
 			//This example has only chatbot1
 			System.out.println("What legal drug would you like to learn about? \n Your options are A : Ibuprofen B : Oxycodone and C : Aderall");
 			statement = in.nextLine();
-			if(statement.equals("A")){
+			if(statement.equals("A") || statement.equals("a")){
 				chatbot1.chatLoop(statement);
-			}else if(statement.equals("B")){
+			}else if(statement.equals("B") || statement.equals("b")){
 				chatbot2.chatLoop(statement);
-			}else if(statement.equals("C")){
+			}else if(statement.equals("C") || statement.equals("c")){
 				chatbot3.chatLoop(statement);
 			}
 
