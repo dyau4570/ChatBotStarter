@@ -4,8 +4,8 @@ import java.util.Scanner;
 /**
  * A program to carry on conversations with a human user.
  * This version:
- * @author Brooklyn Tech CS Department
- * @version September 2018
+ * @author Arifur Rahman
+ * @version October 2018
  */
 public class Aderall
 {
@@ -58,18 +58,18 @@ public class Aderall
 
 		if (statement.length() == 0)
 		{
-			response = "Say that again, I didn't hear what you said. \n Price or Side Effects?";
+			response = "Say that again, I didn't hear what you said. \n Price or Side Effects? If you would like to exit, then type Bye!";
 		}
 
 		else if (findKeyword(statement, "price") >= 0)
 		{
-			response = "The price for Adderall oral tablet 5 mg is around $680 for a supply of 100 tablets. ";
+			response = "The price for Adderall oral tablet 5 mg is around $680 for a supply of 100 tablets. Write effects if you want to learn about Adderall's effects. ";
 
 		}
 
 		else if (findKeyword(statement, "effect") >= 0)
 		{
-			response = "Effects of Adderall on the Body. For people diagnosed with attention-deficit hyperactivity disorder (ADHD), Adderall helps to improve concentration and focus. \n What else do you want to learn about- Mixing with other drugs?";
+			response = "Effects of Adderall on the Body. For people diagnosed with attention-deficit hyperactivity disorder (ADHD), Adderall helps to improve concentration and focus. \n What else do you want to learn about- Mixing with other drugs? Write effects if you want to learn about Adderall's effects, or mixing, to learn about mixing with other drugs. ";
 
 		}
 		else if (findKeyword(statement, "effects") >= 0)
@@ -94,24 +94,29 @@ public class Aderall
 		}
 		else if (findKeyword(statement, "D") >= 0)
 		{
-			response = "You have chosen Mixing with Alcohol.  \n Adderall use can cause people to feel more sober than they truly are, and this might cause people to drink excessively because they can’t feel the effects of the alcohol they’ve drank.Do you also want to learn about Alcohol? Yes or No? ";
-			if (statement == "yes") {
-				response = "An alcoholic drink is a drink that contains ethanol, a type of alcohol produced by fermentation of grains, fruits, or other sources of sugar. Drinking alcohol plays an important social role in many cultures. ";
-			}
+			response = "You have chosen Mixing with Alcohol.  \n Adderall use can cause people to feel more sober than they truly are, and this might cause people to drink excessively because they can’t feel the effects of the alcohol they’ve drank.Do you also want to learn about Alcohol? Type yes1 ";
+
+
 		}
 		else if (findKeyword(statement, "E") >= 0)
 		{
-			response = "You have chosen Mixing with Marijuana. \nUsing marijuana could decrease the chances of individuals knowing that they are experiencing harmful effects of taking too much Adderall. The reduction of inhibitions caused by marijuana could also cause people on Adderall to have decreased consideration for what could happen if other substances are taken. In addition, mixing the two can cause stress since Adderall could increase heartbeat while marijuana slows it down. \n Do you also want to learn about Marijuana?";
-			if (statement == "yes") {
-				response = "Cannabis, also known as marijuana among other names, is a psychoactive drug from the Cannabis plant used for medical or recreational purposes. The main psychoactive part of cannabis is tetrahydrocannabinol, one of 483 known compounds in the plant, including at least 65 other cannabinoids.";
-			}
+			response = "You have chosen Mixing with Marijuana. \nUsing marijuana could decrease the chances of individuals knowing that they are experiencing harmful effects of taking too much Adderall. The reduction of inhibitions caused by marijuana could also cause people on Adderall to have decreased consideration for what could happen if other substances are taken. In addition, mixing the two can cause stress since Adderall could increase heartbeat while marijuana slows it down. \n Do you also want to learn about Marijuana? Type yes2";
 		}
 		else if (findKeyword(statement, "F") >= 0)
 		{
-			response = "You have chosen Mixing with Xanax  \n Both Adderall and Xanax cause dependence and affect the central nervous system multiplies their potential side effects, severe symptoms, and risks. \n Do you also want to learn about Xanax?  ";
-			if (statement == "yes") {
-				response = "Xanax is a member of the benzodiazepine family of drugs and is primarily used to treat anxiety and panic disorders.Xanax works by increasing the amount of the neurotransmitter GABA in the brain to promote calmness and a relaxed feeling.";
-			}
+			response = "You have chosen Mixing with Xanax  \n Both Adderall and Xanax cause dependence and affect the central nervous system multiplies their potential side effects, severe symptoms, and risks. \n Do you also want to learn about Xanax,type yes1?  ";
+		}
+		else if (findKeyword(statement, "yes3") >= 0)
+		{
+			response =  "Xanax is a member of the benzodiazepine family of drugs and is primarily used to treat anxiety and panic disorders.Xanax works by increasing the amount of the neurotransmitter GABA in the brain to promote calmness and a relaxed feeling.Write D if you want to learn about mixing adderall with alcohol, or write E if you want to learn about mixing with Marijuana.\";\n?  ";
+		}
+		else if (findKeyword(statement, "yes2") >= 0)
+		{
+			response = "Cannabis, also known as marijuana among other names, is a psychoactive drug from the Cannabis plant used for medical or recreational purposes. The main psychoactive part of cannabis is tetrahydrocannabinol, one of 483 known compounds in the plant, including at least 65 other cannabinoids.Write D if you want to learn about mixing adderall with alcohol, or write F if you want to learn about mixing with Xanax.";
+		}
+		else if (findKeyword(statement, "yes1") >= 0)
+		{
+			response = "An alcoholic drink is a drink that contains ethanol, a type of alcohol produced by fermentation of grains, fruits, or other sources of sugar. Drinking alcohol plays an important social role in many cultures. Write E if you want to learn about mixing adderall with marijuana, or write F if you want to learn about mixing with Xanax. ";
 		}
 		return response;
 	}
@@ -295,7 +300,7 @@ public class Aderall
 			"Great",
 			"Could you say that again?"
 	};
-	private String [] randomAngryResponses = {"NO.", "Harumph", "The rage consumes me!"};
-	private String [] randomHappyResponses = {"Wavy", "Today is a good day", "Very Nice."};
+	private String [] randomAngryResponses = {"NO.", "I hate you", "ANGER!"};
+	private String [] randomHappyResponses = {"Wavy", "Today is a really good day", "Very Nice."};
 
 }
