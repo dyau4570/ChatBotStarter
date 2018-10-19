@@ -4,8 +4,8 @@ import java.util.Scanner;
 /**
  * A program to carry on conversations with a human user.
  * This version:
- * @author Brooklyn Tech CS Department
- * @version September 2018
+ * @author Darren Yau
+ * @version October 2018
  */
 public class Ibuprofen
 {
@@ -45,8 +45,7 @@ public class Ibuprofen
 	/**
 	 * Gives a response to a user statement
 	 * 
-	 * @param statement
-	 *            the user statement
+	 * @param statement the user statement
 	 * @return a response based on the rules given
 	 */
 	public String getResponse(String statement)
@@ -59,25 +58,25 @@ public class Ibuprofen
 			response = "What do you mean?";
 			emotion--;
 		}
-		else if (findKeyword(statement, "levin") >= 0) {
-			response = "More like LevinTheDream, amiright?";
+		else if (findKeyword(statement, "A") >= 0) {
+			response = "The average retailer sells 800 milligrams of ibuprofen for about $35. However, you can find other places that sell that much for under $10.";
 			emotion++;
 		}
-		else if (findKeyword(statement, "folwell") >= 0) {
-			response = "Watch your backpacks, Mr. Folwell doesn't fall well.";
+		else if (findKeyword(statement, "B") >= 0) {
+			response = "Side effects generally include digestion issues and stomach pains. However, there can be itching and unwanted bowel movements on top of that. \n Would you like to learn about overdosing on ibuprofen? Type overdose if so.";
 			emotion++;
 		}
-		else if (findKeyword(statement, "goldman") >= 0) {
-			response = "Go for the gold, man.";
+		else if (findKeyword(statement, "C") >= 0) {
+			response = "Brand names for ibuprofen includes Advil, Motrin, Genpril, and Propinal.";
 			emotion++;
 		}
 
 		// Response transforming I want to statement
-		else if (findKeyword(statement, "I want to", 0) >= 0) {
-			response = transformIWantToStatement(statement);
+		else if (findKeyword(statement, "overdose", 0) >= 0) {
+			response = "Overdosing on ibuprofen can lead to serious intestinal and stomach problems. You may even fall into a coma. \n If this happens, please contact the Poison Help Line at 1(800)222-1222.";
 		}
-		else if (findKeyword(statement, "I want",0) >= 0) {
-			response = transformIWantStatement(statement);
+		else if (findKeyword(statement, "where",0) >= 0) {
+			response = "You can get ibuprofen at your local pharmacy or the big brand stores like CVS Pharmacy and Rite Aid.";
 		}	
 		else {
 			response = getRandomResponse();
