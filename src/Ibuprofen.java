@@ -20,19 +20,11 @@ public class Ibuprofen
 	{
 		Scanner in = new Scanner (System.in);
 		System.out.println (getGreeting());
-
-
-		while (!statement.equals("Bye"))
-		{
-
-
+		while (!statement.equals("Bye")) {
 			statement = in.nextLine();
 			//getResponse handles the user reply
 			System.out.println(getResponse(statement));
-
-
 		}
-
 	}
 	/**
 	 * Get a default greeting 	
@@ -41,15 +33,13 @@ public class Ibuprofen
 	public String getGreeting() {
 		return "Hi, what would you like to learn about ibuprofen? \n A. Price or B. Side Effects? You can also ask for C. brand names.";
 	}
-	
 	/**
 	 * Gives a response to a user statement
 	 * 
 	 * @param statement the user statement
 	 * @return a response based on the rules given
 	 */
-	public String getResponse(String statement)
-	{
+	public String getResponse(String statement) {
 		String response = "";
 		if (statement.length() == 0) {
 			response = "What would you like to learn about ibuprofen?";
@@ -70,8 +60,6 @@ public class Ibuprofen
 			response = "Brand names for ibuprofen includes Advil, Motrin, Genpril, and Propinal.";
 			emotion++;
 		}
-
-		// Response transforming I want to statement
 		else if (findKeyword(statement, "overdose", 0) >= 0) {
 			response = "Overdosing on ibuprofen can lead to serious intestinal and stomach problems. You may even fall into a coma. \n If this happens, please contact the Poison Help Line at 1(800)222-1222.";
 		}
@@ -93,14 +81,14 @@ public class Ibuprofen
 		//  Remove the final period, if there is one
 		statement = statement.trim();
 		String lastChar = statement.substring(statement.length() - 1);
-		if (lastChar.equals("."))
-		{
+		if (lastChar.equals(".")) {
 			statement = statement.substring(0, statement.length() - 1);
 		}
 		int psn = findKeyword (statement, "I want to", 0);
 		String restOfStatement = statement.substring(psn + 9).trim();
 		return "Why do you want to " + restOfStatement + "?";
-	}/**
+	}
+	/**
 	 * Take a statement with "I want <something>." and transform it into 
 	 * "Would you really be happy if you had <something>?"
 	 * @param statement the user statement, assumed to contain "I want"
@@ -109,8 +97,7 @@ public class Ibuprofen
 	private String transformIWantStatement(String statement) {
 		//  Remove the final period, if there is one
 		statement = statement.trim();
-		String lastChar = statement.substring(statement
-				.length() - 1);
+		String lastChar = statement.substring(statement.length() - 1);
 		if (lastChar.equals(".")) {
 			statement = statement.substring(0, statement.length() - 1);
 		}
@@ -200,7 +187,7 @@ public class Ibuprofen
 		}
 		if (emotion < 0) {
 			return randomAngryResponses [r.nextInt(randomAngryResponses.length)];
-		}	
+		}
 		return randomHappyResponses [r.nextInt(randomHappyResponses.length)];
 	}
 	private String [] randomNeutralResponses = {"Tha national suicide hotline is 1(800)273-8255.",
